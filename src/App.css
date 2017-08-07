@@ -2,7 +2,7 @@
 .container {
     margin-left:auto;
     margin-right:auto;
-    width:1350px;
+    width:1349px;
 }
 /* end */
 
@@ -18,152 +18,176 @@
   position: relative;
   top: -440px;
 }
-  .sprite_size{
-    width: 150px;
-    height: 150px;
-    animation-name: 'swipe_left';
-    animation-duration: .8s;
-    position: absolute;
-  }
-  .sprite_front {
-    width: 150px;
-    height: 150px;
-    animation-name: 'appear_stationary';
-    animation-duration: 3s;
-    position: absolute;
-  }
-  .sprite_front_shiny {
-    width: 150px;
-    height: 150px;
-    animation-name: 'appear';
-    animation-duration: 3s;
-    position: absolute;
-    left: 260px;
-  }
-  .sprite_back {
-    width: 150px;
-    height: 150px;
-    animation-name: 'appear_back';
-    animation-duration: 3s;
-    position: absolute;
-    top: 250px;
-  }
-  .sprite_back_shiny {
-    width: 150px;
-    height: 150px;
-    animation-name: 'appear_back_down';
-    animation-duration: 3s;
-    position: absolute;
-    top: 250px;
-    left: 260px;
-  }
-  .sprite{
-    background: white;
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 178px;
-    left: 355px;
-    padding-top: 15px;
-    padding-left: 53px;
-    padding-bottom: 60px;
-    padding-right: 107px;
-    border-radius: 10px;
-    border: black 2px solid;
-  }
+.sprite_size{
+  width: 150px;
+  height: 150px;
+  animation-name: 'swipe_left';
+  animation-duration: .8s;
+  position: absolute;
+}
+.sprite_front {
+  width: 150px;
+  height: 150px;
+  animation-name: 'appear_stationary';
+  animation-duration: 3s;
+  position: absolute;
+}
+.sprite_front_shiny {
+  width: 150px;
+  height: 150px;
+  animation-name: 'appear';
+  animation-duration: 3s;
+  position: absolute;
+  left: 260px;
+}
+.sprite_back {
+  width: 150px;
+  height: 150px;
+  animation-name: 'appear_back';
+  animation-duration: 3s;
+  position: absolute;
+  top: 250px;
+}
+.sprite_back_shiny {
+  width: 150px;
+  height: 150px;
+  animation-name: 'appear_back_down';
+  animation-duration: 3s;
+  position: absolute;
+  top: 250px;
+  left: 260px;
+}
+.sprite{
+  background: white;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 178px;
+  left: 355px;
+  padding-top: 15px;
+  padding-left: 53px;
+  padding-bottom: 60px;
+  padding-right: 107px;
+  border-radius: 10px;
+  border: black 2px solid;
+}
 /* end images */
+
 /* buttons */
 .shinify{
   font-family: monospace;
   font-size: 20px;
   position: absolute;
-  border: 2px outset lime;
+  border: 3px outset lime;
   background: lime;
   border-radius: 7px;
   outline: none;
   width: 122px;
   height: 58px;
-  top: 475px;
+  top: 474px;
   left: 390px;
 }
 .shinify:active {
   border: 2px inset lime;
   border-radius: 7px;
 }
-  .button_display {
-    position: absolute;
-    top: 160px;
-    left: 118px;
-    background: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
-  .button_show {
-    background: gray;
-    margin: 5px;
-    border: 5px inset gray;
-    box-shadow: 0px 0px 5px 5px black;
-  }
-  .expand {
-    font-family: monospace;
-    font-size: 25px;
-    outline: none;
-    z-index: 1;
-    position:relative;
-    width: 200px;
-    height: 60px; 
-    top:316px;
-    left: 772px;
-    background: lightblue;
-    border: 2px inset lightblue;
-    border-radius: 7px;
-  }
-  .expand:active{
-    border: 2px inset lightseagreen;
-    border-radius: 7px;
-  }
+.button_display {
+  position: absolute;
+  top: 207px;
+  left: 118px;
+  background: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  outline: none;
+}
+.button_show {
+  background: gray;
+  border: 5px inset gray;
+  box-shadow: 0px 0px 5px 5px black;
+  margin-top: 30px;
+}
+.expand {
+  font-family: monospace;
+  font-size: 25px;
+  outline: none;
+  z-index: 1;
+  position:relative;
+  width: 200px;
+  height: 60px; 
+  top:316px;
+  left: 770px;
+  background: lightblue;
+  border: 1px inset lightblue;
+  border-radius: 7px;
+}
+.expand:active{
+  border: 2px inset lightseagreen;
+  border-radius: 7px;
+}
+.scroll{
+  display: flex;
+  width: 200px;
+  min-height: 125px;
+  overflow-x: scroll;
+  position: absolute;
+  top: 70px;
+  left: 38px;
+  text-align: center;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-x: repeat(100%)
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.right_arrow {
+  background-image: url('./arrow.png');
+  width:56px;
+  height: 39px;
+  position: relative;
+  top: 174px;
+  left: 198px;
+}
+.left_arrow {
+  background-image: url('./left_arrow.png');
+  width:56px;
+  height:39px;
+  position: relative;
+  top: 213px;
+  left: 33px;
+}
 /* end buttons */
 
 /* stats to display */
 .stats {
-    font-size: 20px;
-    font-family: monospace;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    position: absolute;
-    top: 200px;
-    left: 755px;
+  font-size: 18px;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  top: 203px;
+  left: 752px;
 }
 .name {
-    width: 200px;
-    font-size: 20px;
-    font-family: monospace
+  width: 115px;
+  font-size: 18px;
+  font-family: monospace;
+  position: relative;
 }
 .end {
   background: red;
-   margin: 10px;
-   width: 30px; 
-   display: none;
-   position: relative;
+  margin: 10px;
+  width: 30px; 
+  display: none;
+  position: relative;
 }
 .start{
   text-align: center;
-  width:100px;
-margin-left:50px;
-display: flex;
-}
-.scroll{
+  width:130px;
+  margin-left:50px;
   display: flex;
-  width: 217px;
-  max-height: 90px;
-  overflow-x: scroll;
-  position: absolute;
-  top: 52px;
-  left: 35px;
-  text-align: center;
 }
 .defaultStatus{
   font-family: monospace;
@@ -176,7 +200,7 @@ display: flex;
   height: 28px;
   top: 483px;
   border-radius: 10px;
-  left: 757px;
+  left: 755px;
 }
 .shinyStatus{
   font-family: monospace;
@@ -189,189 +213,199 @@ display: flex;
   height: 28px;
   top: 483px;
   border-radius: 10px;
-  left: 883px;
+  left: 882px;
 }
- /* end stats */
+/* end stats */
 
-  /* animations */
-   .hidden {
-    animation-name: 'swipe_right';
-    animation-duration: 20s;
-    animation-timing-function: ease-out;
-  } 
-  .display {
-    animation-name: 'swipe_left';
-    animation-duration: .8s;
+/* animations */
+.hidden {
+  animation-name: 'swipe_right';
+  animation-duration: .8s;
+  opacity: 0;
+} 
+.display {
+  animation-name: 'swipe_left';
+  animation-duration: .8s;
+}
+.expand_animation{
+  animation-name: 'expand_bigger';
+  animation-duration: 2s;
+  width: 300px;
+  height: 350px;
+  top: 50px;
+  left: 275px;
+  padding-top: 15px;
+  padding-left: 53px;
+  padding-bottom: 60px;
+  padding-right: 107px;
+  border-radius: 10px;
+  border: black 2px solid;
+  background: white;
+}
+.hide_animation {
+  animation-name: 'hide_smaller';
+  animation-duration: 2s;
+  width: 100px;
+  height: 100px;
+  top: 178px;
+  left: 355px;
+  padding-top: 15px;
+  padding-left: 53px;
+  padding-bottom: 60px;
+  padding-right: 107px;
+  border: black 2px solid;
+  background: white; 
+}
+.hide_stationary {
+  animation-name: 'hide_stationary';
+  animation-duration: 1s;
+  opacity: 0;
+}
+.show_stationary {
+  animation-name: 'appear_stationary';
+  animation-duration: 1s;
+}
+.hide_back_down {
+  animation-name: 'hide_back_down';
+  animation-duration: 1s;
+  opacity: 0;
+  top:20px;
+  left:50px;
+}
+.show_back_down {
+  animation-name: 'appear_back_down';
+  animation-duration: 1s;
+}
+.hide_back {
+  animation-name: 'hide_back';
+  animation-duration: 1s;
+  opacity: 0;
+  top:20px;
+  left:50px;
+}
+.show_back {
+  animation-name: 'appear_back';
+  animation-duration: 1s;
+}
+.hide_front {
+  animation-name: 'hide';
+  animation-duration: 1s;
+  opacity: 0;
+  top:20px;
+  left:50px;
+}
+.show_front {
+  animation-name: 'appear';
+  animation-duration: 1s;
+}
+
+/* keyframes */
+@keyframes appear_stationary {
+  0% {
+    opacity: 0;
   }
-  .expand_animation{
-    animation-name: 'expand_bigger';
-    animation-duration: 2s;
+}
+@keyframes appear_back_down {
+  0% {
+    opacity: 0;
+    transform: translate(-230px,-150px);
+  }
+}
+@keyframes appear_back {
+  0% {
+    opacity: 0;
+    transform: translate(0, -150px);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translate(-230px,0);
+  }
+}
+@keyframes hide_stationary {
+  0% {
+    opacity: 1;
+  }
+}
+@keyframes hide_back_down {
+  0% {
+    opacity: 1;
+    transform: translate(210px,230px);
+  }
+  50%{
+    opacity: 0;
+  }
+}
+@keyframes hide_back {
+  0% {
+    opacity: 1;
+    transform: translate(2px,230px);
+  }
+  50%{
+    opacity: 0;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: translate(210px,-5px)
+  }
+  50%{
+    opacity: 0;
+  }
+}
+@keyframes hide_smaller {
+  0% {
     width: 300px;
     height: 350px;
     top: 50px;
     left: 275px;
-    padding-top: 15px;
-    padding-left: 53px;
-    padding-bottom: 60px;
-    padding-right: 107px;
-    border-radius: 10px;
-    border: black 2px solid;
-    background: white;
   }
-  .hide_animation {
-    animation-name: 'hide_smaller';
-    animation-duration: 2s;
-    width: 100px;
-    height: 100px;
-    top: 178px;
-    left: 355px;
-    padding-top: 15px;
-    padding-left: 53px;
-    padding-bottom: 60px;
-    padding-right: 107px;
-    border: black 2px solid;
-    background: white; 
-  }
-  .hide_stationary {
-    animation-name: 'hide_stationary';
-    animation-duration: 1s;
-    opacity: 0;
-  }
-  .show_stationary {
-    animation-name: 'appear_stationary';
-    animation-duration: 1s;
-  }
-  .hide_back_down {
-    animation-name: 'hide_back_down';
-    animation-duration: 1s;
-    opacity: 0;
-    top:20px;
-    left:50px;
-  }
-  .show_back_down {
-    animation-name: 'appear_back_down';
-    animation-duration: 1s;
-  }
-  .hide_back {
-    animation-name: 'hide_back';
-    animation-duration: 1s;
-    opacity: 0;
-    top:20px;
-    left:50px;
-  }
-  .show_back {
-    animation-name: 'appear_back';
-    animation-duration: 1s;
-  }
-  .hide_front {
-    animation-name: 'hide';
-    animation-duration: 1s;
-    opacity: 0;
-    top:20px;
-    left:50px;
-  }
-  .show_front {
-    animation-name: 'appear';
-    animation-duration: 1s;
-  }
-  /* keyframes */
-  @keyframes appear_stationary {
-    0% {
-      opacity: 0;
-    }
-  }
-  @keyframes appear_back_down {
-    0% {
-      opacity: 0;
-      transform: translate(-230px,-150px);
-    }
-  }
-  @keyframes appear_back {
-    0% {
-      opacity: 0;
-      transform: translate(0, -150px);
-    }
-  }
-  @keyframes appear {
-    0% {
-      opacity: 0;
-      transform: translate(-230px,0);
-    }
-  }
-  @keyframes hide_stationary {
-    0% {
-      opacity: 1;
-    }
-  }
-  @keyframes hide_back_down {
-    0% {
-      opacity: 1;
-      transform: translate(210px,230px);
-    }
-    50%{
-      opacity: 0;
-    }
-  }
-  @keyframes hide_back {
-    0% {
-      opacity: 1;
-      transform: translate(2px,230px);
-    }
-    50%{
-      opacity: 0;
-    }
-  }
-  @keyframes hide {
-    0% {
-      opacity: 1;
-      transform: translate(210px,-5px)
-    }
-    50%{
-      opacity: 0;
-    }
-  }
-  @keyframes hide_smaller {
-    0% {
-      width: 300px;
-      height: 350px;
-      top: 50px;
-      left: 275px;
-    }
-  }
-  @keyframes expand_bigger {
-    0% {
-      width: 100px; height: 100px;
-      transform: translate(80px,128px);
-    }
-    35% {
-      width: 300px; height: 350px;
-      transform: translate(0,0px);
-    }
-    75% {
-      width: 300px;
-      height: 350px;
-    }
-  }
- @keyframes swipe_left {
-    0% { 
-      opacity: 0; 
-      transform: translate(-100px,0); 
-    }
-    40%  {
-      opacity: 1;
-      transform:translate(10px,0);
-    }
-    65% { transform:translate(-10px,0) }
-    100%{ transform: translate(0,0)}
 }
- @keyframes swipe_right {
-    0% { 
-      opacity: 1; 
-      transform: translate(0,0); 
-    }
-    2%  { transform:translate(-10px,0);}
-    4%{ transform: translate(100px,0)}
-    5%{opacity: 0;}
-    100%{opacity: 0;}
+@keyframes expand_bigger {
+  0% {
+    width: 100px; height: 100px;
+    transform: translate(80px,128px);
+  }
+  35% {
+    width: 300px; height: 350px;
+    transform: translate(0,0px);
+  }
+  75% {
+    width: 300px;
+    height: 350px;
+  }
+}
+@keyframes swipe_left {
+  0% { 
+    opacity: 0; 
+    transform: translate(-100px,0); 
+  }
+  10% {
+    opacity: 0;
+  }
+  40%  {
+    opacity: 1;
+    transform:translate(10px,0);
+  }
+  65% { 
+    transform:translate(-10px,0) 
+  }
+  100%{ 
+    transform: translate(0,0)
+  }
+}
+@keyframes swipe_right {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    transform: translate(-10px,0)
+  }
+  65% {
+    transform: translate(100px,0);
+    opacity: 0
+  }
 }
 /* end animations */

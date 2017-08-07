@@ -3,20 +3,28 @@
     margin-left:auto;
     margin-right:auto;
     width:1349px;
+    max-height: 100px;
 }
 /* end */
 
 /* images */
 .pic {
-    background: url('./pokedex.png') no-repeat center;   
+    background: url('./images/pokedex.png') no-repeat center;   
     height: 600px;
     position: relative;
 }
 .smaller_pic {
-  background: url("./pokedex_names.png") no-repeat;
+  background: url("./images/pokedex_names.png") no-repeat;
   height: 300px;
   position: relative;
-  top: -440px;
+  top: -740px;
+}
+.search_pic{
+  background: url('./images/search.png') no-repeat;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  top: -550px;
 }
 .sprite_size{
   width: 150px;
@@ -86,6 +94,7 @@
   height: 58px;
   top: 474px;
   left: 390px;
+  z-index: 2;
 }
 .shinify:active {
   border: 2px inset lime;
@@ -106,6 +115,24 @@
   border: 5px inset gray;
   box-shadow: 0px 0px 5px 5px black;
   margin-top: 30px;
+  z-index: 1;
+  outline: none;
+}
+.button_show:active{
+  border: 4px outset gray;
+}
+.button_show_searched {
+  background: gray;
+  border: 5px inset gray;
+  box-shadow: 0px 0px 5px 5px black;
+  z-index: 2;
+  top: 30px;
+  left: 30px;
+  outline: none;
+  position: absolute;
+}
+.button_show_searched:active{
+  border: 4px outset gray;
 }
 .expand {
   font-family: monospace;
@@ -134,14 +161,12 @@
   top: 70px;
   left: 38px;
   text-align: center;
-  scroll-snap-type: mandatory;
-  scroll-snap-points-x: repeat(100%)
 }
 .scroll::-webkit-scrollbar {
   display: none;
 }
 .right_arrow {
-  background-image: url('./arrow.png');
+  background-image: url('./images/right_arrow.png');
   width:56px;
   height: 39px;
   position: relative;
@@ -149,16 +174,58 @@
   left: 198px;
 }
 .left_arrow {
-  background-image: url('./left_arrow.png');
+  background-image: url('./images/left_arrow.png');
   width:56px;
   height:39px;
   position: relative;
   top: 213px;
   left: 33px;
 }
+.search_input {
+  position: relative;
+  top: 30px;
+  left: 37px;
+  text-align: center;
+  width: 210px;
+}
+.search_form {
+  position: absolute;
+  top: 30px;
+  left: 37px;
+  width: 210px;
+  height: 20px;
+  outline: none;
+  background: transparent;
+  border: none;
+  color: black;
+  z-index: 1;
+  text-align: center;
+  font-size: 20px;  
+}
+.clear_button {
+  background: gray;
+  border: 5px inset gray;
+  box-shadow: 0px 0px 5px 5px black;
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  z-index: 2;
+  outline: none;
+}
+.clear_button:active {
+  border: 4px outset gray;
+}
 /* end buttons */
 
 /* stats to display */
+.search_section {
+position: relative;
+left: 42px;
+top: 60px;
+width: 200px;
+height: 90px;
+text-align: center;
+}
 .stats {
   font-size: 18px;
   font-family: monospace;
@@ -175,6 +242,9 @@
   font-size: 18px;
   font-family: monospace;
   position: relative;
+}
+.name_searched {
+  text-align: center;
 }
 .end {
   background: red;

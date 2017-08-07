@@ -15,6 +15,8 @@ class App extends Component {
         scrolled:0,
         urlNumber:0,
         url: 'http://pokeapi.co/api/v2/pokemon/?offset=',
+        fullUrl:'http://pokeapi.co/api/v2/pokemon/?limit=810',
+        pokemonSearched:'',
       }
   }
 
@@ -28,7 +30,7 @@ class App extends Component {
   // Gen 5 pokemon 494 - 649
   // Gen 6 pokemon 650 - 721
   // All other pokemon 721 - 810
-  componentDidMount() {
+  componentDidMount(){
     axios.get(this.state.url + this.state.urlNumber)
     .then((response)=> {
       this.setState({
@@ -136,8 +138,59 @@ class App extends Component {
     }) : null 
   }
 
+  textChanged(event){
+    this.setState({
+      searchForm: event.target.value
+    })
+  }
+
+  searchPokemon(event){
+    var name = this.state.searchForm
+    event.preventDefault();
+    axios.get(this.state.fullUrl).then((response)=>{
+      console.log(response.data.results.forEach((e)=>{
+        name.toLowerCase() === e.name? this.setState({
+          pokemonSearched: e
+        }): null
+      }));
+        
+    })
+  }
+
+  clearEntry(){
+    this.setState({
+      searchForm: '',
+      searchPokemon: '',
+      pokemonSearched: ''
+    })
+  }
   //rendering everything!
   render() {
+
+    var keys = {};
+    window.addEventListener("keydown",
+    function(e){
+      keys[e.keyCode] = true;
+      switch(e.keyCode){
+        case 37: case 39: case 38:  case 40: // Arrow keys
+        case 32: e.preventDefault(); break; // Space
+        default: break; // do not block other keys
+      }
+    },
+    false);
+    window.addEventListener('keyup',
+      function(e){
+        keys[e.keyCode] = false;
+      },
+    false);
+
+    var pokemonReceived =( 
+    <section className='search_section' hidden={this.state.screenIsOn? false : this.state.pokemonSearched? false: true}>
+       <div className='name_searched'>{this.state.pokemonSearched.name}</div> 
+       <button className="button_show_searched" onClick={(e)=>this.getPokemon(this.state.pokemonSearched.url)}> Show! </button>
+       <button className="clear_button" onClick={(e)=>this.clearEntry()}>Clear!</button>   
+    </section>);
+
     var initial = this.state.pokemonToDisplay.map((key)=>{
       return(
         <div className={this.state.screenIsOn === false? 'end': 'start'}>
@@ -195,6 +248,14 @@ class App extends Component {
             <div style={{opacity:this.state.isShiny? .3 : 1 }} className='defaultStatus'>DEFAULT</div>
             {current} 
           </div>
+        </div>
+        <div className='search_pic'>
+          <form onSubmit={(e)=>this.searchPokemon(e)}>
+            <input maxLength='17' className='search_form' onChange={(e)=>this.textChanged(e)}/>
+          </form> 
+          <div>
+            {pokemonReceived}
+          </div>  
         </div>
         <div className='smaller_pic'>
           <div className="left_arrow" onClick={(e)=>this.scrollLeft()}></div>
